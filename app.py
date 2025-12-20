@@ -1,3 +1,20 @@
+import streamlit as st
+
+st.set_page_config(
+    page_title="Movie Recommender",
+    layout="wide"
+)
+
+# Hide Streamlit UI elements
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 import pickle
